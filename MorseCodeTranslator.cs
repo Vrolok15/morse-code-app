@@ -68,7 +68,7 @@ namespace Treehouse
         {'Ü', "..--"}
       };
       
-      public static string toMorse(string input)
+      public static string ToMorse(string input)
       {
         List<string> output = new List<string>(input.Length);
         
