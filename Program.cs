@@ -6,20 +6,29 @@ namespace Treehouse
     {
         public static void Main()
         {
-          while (true)
-          {
-            Console.Write(": ");
-            string input = Console.ReadLine();
-            
-            if(string.IsNullOrWhiteSpace(input))
+            while(true)
             {
-              break; 
+                Console.Write(": ");
+                string input = Console.ReadLine().Trim();
+
+                if(string.IsNullOrWhiteSpace(input))
+                {
+                    break;
+                }
+
+                string output;
+
+                if(input[0] == '.' || input[0] == '-')
+                {
+                    output = MorseCodeTranslator.ToText(input);
+                }
+                else
+                {
+                    output = MorseCodeTranslator.ToMorse(input);
+                }
+
+                Console.WriteLine(output);
             }
-            
-            string output = MorseCodeTranslator.ToMorse(input);
-            
-            Console.WriteLine(output);
-          }
         }
     }
 }
